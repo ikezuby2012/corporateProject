@@ -1,0 +1,121 @@
+.mr-5 {
+   margin-right: 0.5rem;
+}
+@mixin scroll-bar {
+   overflow-y: hidden;
+   transition: all 0.3s cubic-bezier(0.38, 0.01, 0.15, 0.99);
+   backface-visibility: hidden;
+   -webkit-backface-visibility: hidden;
+
+   &::-webkit-scrollbar {
+      width: 12px;
+   }
+   &::-webkit-scrollbar-track {
+      background: var(--scrollbarBG);
+      border-radius: 10px;
+   }
+   &::-webkit-scrollbar-thumb {
+      background-color: var(--thumbBG);
+      border-radius: 6px;
+      border: 3px solid var(--scrollbarBG);
+   }
+   &:hover {
+      overflow-y: scroll;
+      scrollbar-width: thin;
+      scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+      // padding-left: 1rem;
+   }
+}
+.ma-bt-md {
+   margin-bottom: 3rem !important;
+}
+
+.ma-bt-lg {
+   margin-bottom: 3.5rem !important;
+}
+
+.right {
+   text-align: right !important;
+}
+//
+.btn,
+.btn:link,
+.btn:visited {
+   font-size: 1.6rem;
+   padding: 1.4rem 3rem;
+   border-radius: 10rem;
+   text-transform: uppercase;
+   display: inline-block;
+   text-decoration: none;
+   position: relative;
+   -webkit-transition: all 0.4s;
+   transition: all 0.4s;
+   font-weight: 400;
+   -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
+   /*Add later when we use this for the button in form*/
+   border: none;
+   cursor: pointer;
+   &:hover {
+      -webkit-transform: translateY(-3px);
+      transform: translateY(-3px);
+      -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+   }
+   &:active {
+      -webkit-transform: translateY(-1px);
+      transform: translateY(-1px);
+      -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+   }
+   &:focus {
+      outline: none;
+      background-color: #86552e;
+   }
+}
+.btn--small {
+   background-color: #fff;
+   color: #777;
+   &::after {
+      background-color: #fff;
+   }
+}
+.btn--gold {
+   background-color: #dd830d;
+   color: #fff;
+   &::after {
+      background-color: #c59555;
+   }
+}
+.loading {
+   &-button {
+      width: 2.5rem;
+      height: 2.5rem;
+      margin: 0.3rem 2rem;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border: 5px solid rgba(235, 217, 187, 0.2);
+      border-left-color: #f39904;
+      background-color: transparent;
+      animation: rotate-loader 1.5s linear infinite;
+      -webkit-animation: rotate-loader 1.5s linear infinite;
+      animation-delay: 0.2s;
+   }
+}
+@keyframes rotate-loader {
+   from {
+      transform: rotate(0);
+      -webkit-transform: rotate(0);
+      -moz-transform: rotate(0);
+      -ms-transform: rotate(0);
+      -o-transform: rotate(0);
+   }
+
+   to {
+      transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+   }
+}
